@@ -11,6 +11,7 @@
 \RequirePackage{mdframed}
 \RequirePackage{xstring}
 \RequirePackage[nomessages]{fp}
+\RequirePackage{ifthen}
 
 % Color declaration
 
@@ -24,12 +25,14 @@
 \definecolor{purple}{HTML}{B10DC9}
 \definecolor{lightgray}{HTML}{999999}
 \definecolor{gray}{HTML}{555555}
+\definecolor{darkgray}{HTML}{333333}
 \definecolor{white}{HTML}{eeeeee}
 
 \colorlet{headerBackground}{gray}
 \colorlet{headerText}{white}
 
 \pagenumbering{gobble}
+\noexpandarg
 
 % Header
 
@@ -62,6 +65,7 @@
   	\let\oldsection\section
 	\renewcommand{\section}[2] {
 		{
+			\vspace{0.25cm}~
 			\par\LARGE 
 			\fontfamily{phv}\selectfont 
 			\StrLen{##1}[\stringLength]
@@ -72,7 +76,7 @@
 	\begin{textblock}{3.6}(8, 4.25)
 	\begin{flushleft}
 	\obeycr
-	\vspace{-0.4cm}~
+	\vspace{-1.0cm}~
 }{
 	\restorecr
 	\end{flushleft}
@@ -88,6 +92,7 @@
   	\let\oldsection\section
   	\renewcommand{\section}[2] {
 		{
+			\vspace{0.125cm}~
 			\par\Large 
 			\fontfamily{phv}\selectfont
 
@@ -95,7 +100,9 @@
 			\FPeval{\leftBreak}{clip(\stringLength - 3)}
 			\FPeval{\rightBreak}{clip(\stringLength - 2)}
 			\textbf{\color{black}\StrMid{##1}{1}{\leftBreak}\color{##2}\StrMid{##1}{\rightBreak}{\stringLength}}
+			
 		}
+		\vspace{-0.25cm}~
 	}
 	
 	\normalsize
@@ -103,6 +110,7 @@
 	\begin{textblock}{5.8}(1.5, 4.33)
 	\begin{flushright}
 	\obeycr
+	\vspace{-0.75cm}~
 }{
 	\restorecr
 	\end{flushright}
@@ -118,18 +126,21 @@
 	\begin{tabular*} {\textwidth}{@{\extracolsep{\fill}}ll}
 } {
 	\end{tabular*}
+	\vspace{-1.0cm}~
 }
 
-\newcommand{\rightentry}[4] {
+\newcommand{\rightentry}[5] {
 	\fontfamily{phv}\selectfont
  	\parbox[t]{3.5cm}{#1} &\parbox[t]{8.5cm} {
 		\fontfamily{phv}\selectfont
- 		\textbf{#2} \hfill \color{lightgray}#3 \\ 
-		\color{black}#4
- 	}	
+ 		\textbf{#2} \hfill \color{lightgray}#3\\
+		\StrLen{#4}[\stringLength]
+  		\ifthenelse{\equal{\stringLength}{0}}{}{\color{black}\emph{#4}\\}
+		\ifthenelse{\equal{\stringLength}{0}}{}{\color{darkgray}#5\\}
+ 	}
 }
 \newcommand{\leftentry}[2] {
 	\fontfamily{phv}\selectfont
-	\raggedleft\parbox[t]{4.3cm}{\raggedleft #1} & \parbox[t]{1cm}{\hfill \emph{#2}}
+	\raggedleft\parbox[t]{4.3cm}{\raggedleft #1} & \parbox[t]{1cm}{\hfill \emph{#2}}\\
 }
 
