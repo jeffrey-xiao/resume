@@ -30,6 +30,10 @@
 
 \colorlet{headerBackground}{gray}
 \colorlet{headerText}{white}
+\colorlet{headerEmph}{lightblue}
+\colorlet{titleText}{black}
+\colorlet{bodyText}{darkgray}
+\colorlet{tagText}{lightgray}
 
 \pagenumbering{gobble}
 \noexpandarg
@@ -44,10 +48,10 @@
     	\node [anchor=center] (name) at (box) {
     		\Huge
 			\fontfamily{phv}\selectfont
-      		{\color{white} #1}{\color{lightblue} \textbf{#2}}
+      		{\color{headerText} #1}{\color{headerEmph} \textbf{#2}}
     	};
     	\node [anchor=north] at (name.south) {
-    		\color{white}
+    		\color{headerText}
     		\Large
 			\fontfamily{phv}\selectfont
       		{#3}
@@ -69,7 +73,7 @@
 			\par\LARGE 
 			\fontfamily{phv}\selectfont 
 			\StrLen{##1}[\stringLength]
-			\textbf{\color{##2}\StrMid{##1}{1}{3}\color{black}\StrMid{##1}{4}{\stringLength}}
+			\textbf{\color{##2}\StrMid{##1}{1}{3}\color{titleText}\StrMid{##1}{4}{\stringLength}}
 		}
 	}
 
@@ -92,17 +96,17 @@
   	\let\oldsection\section
   	\renewcommand{\section}[2] {
 		{
-			\vspace{0.125cm}~
+			~
 			\par\Large 
 			\fontfamily{phv}\selectfont
 
 			\StrLen{##1}[\stringLength]
 			\FPeval{\leftBreak}{clip(\stringLength - 3)}
 			\FPeval{\rightBreak}{clip(\stringLength - 2)}
-			\textbf{\color{black}\StrMid{##1}{1}{\leftBreak}\color{##2}\StrMid{##1}{\rightBreak}{\stringLength}}
+			\textbf{\color{titleText}\StrMid{##1}{1}{\leftBreak}\color{##2}\StrMid{##1}{\rightBreak}{\stringLength}}
 			
 		}
-		\vspace{-0.25cm}~
+		\vspace{-0.4cm}~
 	}
 	
 	\normalsize
@@ -110,7 +114,7 @@
 	\begin{textblock}{5.8}(1.5, 4.33)
 	\begin{flushright}
 	\obeycr
-	\vspace{-0.75cm}~
+	\vspace{-0.65cm}~
 }{
 	\restorecr
 	\end{flushright}
@@ -131,16 +135,18 @@
 
 \newcommand{\rightentry}[5] {
 	\fontfamily{phv}\selectfont
+	\vspace{-0.1cm}
  	\parbox[t]{3.5cm}{#1} &\parbox[t]{8.5cm} {
 		\fontfamily{phv}\selectfont
- 		\textbf{#2} \hfill \color{lightgray}#3\\
+ 		\textbf{#2} \hfill \color{tagText}#3\\
 		\StrLen{#4}[\stringLength]
-  		\ifthenelse{\equal{\stringLength}{0}}{}{\color{black}\emph{#4}\\}
-		\ifthenelse{\equal{\stringLength}{0}}{}{\color{darkgray}#5\\}
+  		\ifthenelse{\equal{\stringLength}{0}}{}{\color{titleText}\emph{#4}\\}
+		\ifthenelse{\equal{\stringLength}{0}}{}{\color{bodyText}#5\\}
  	}
 }
 \newcommand{\leftentry}[2] {
 	\fontfamily{phv}\selectfont
+	\vspace{-0.2cm}
 	\raggedleft\parbox[t]{4.3cm}{\raggedleft #1} & \parbox[t]{1cm}{\hfill \emph{#2}}\\
 }
 
