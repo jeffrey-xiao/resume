@@ -77,7 +77,8 @@
 			\fontfamily{phv}\selectfont 
 			\StrLen{##2}[\stringLength]
 			%\textbf{\color{##3}\StrMid{##2}{1}{3}\color{titleText}\StrMid{##2}{4}{\stringLength}}
-			\textbf{\LARGE\color{##3}##2}
+			%\parbox[t]{12.15cm}{\hfill\textbf{\LARGE\color{##3}##2}}
+			\ \textbf{\LARGE\color{##3}##2}
 		}
 	}
 
