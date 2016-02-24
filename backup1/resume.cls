@@ -81,7 +81,7 @@
 		}
 	}
 
-	\begin{textblock}{3.6}(1.5, 4.25)
+	\begin{textblock}{3.6}(8, 4.25)
 	\begin{flushleft}
 	\obeycr
 	\vspace{-1.0cm}~
@@ -116,13 +116,13 @@
 	
 	\normalsize
 	\fontfamily{phv}\selectfont
-	\begin{textblock}{5.8}(14.5, 4.33)
-	\begin{flushleft}
+	\begin{textblock}{5.8}(1.5, 4.33)
+	\begin{flushright}
 	\obeycr
 	\vspace{-0.65cm}~
 }{
 	\restorecr
-	\end{flushleft}
+	\end{flushright}
 	\end{textblock}
   	\let\section\oldsection
 }
@@ -153,10 +153,10 @@
 \newcommand{\leftentry}[2] {
 	\fontfamily{phv}\selectfont
 	\vspace{-0.2cm}
-	\raggedright\parbox[t]{1.0cm}{\raggedright \emph{#1}} & \parbox[t]{4.3cm}{#2}\\
+	\raggedleft\parbox[t]{4.3cm}{\raggedleft #1} & \parbox[t]{1cm}{\hfill \emph{#2}}\\
 }
 
 \newcommand{\iconentry}[2] {
 	\fontfamily{phv}\selectfont
-	\parbox[t]{0.3cm}{\centering#1} \ #2 
+	#1 \ \parbox[t]{0.3cm}{\centering#2}
 }
