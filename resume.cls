@@ -16,14 +16,16 @@
 % Color declaration
 
 \definecolor{lightblue}{HTML}{87CEFA}
-\definecolor{blue}{HTML}{0074D9}
+\definecolor{blue}{HTML}{0873B5}
+\definecolor{darkblue}{HTML}{043757}
+\definecolor{blackblue}{HTML}{00070C}
 \definecolor{lightgreen}{HTML}{01FF70}
 \definecolor{green}{HTML}{2ECC40}
 \definecolor{red}{HTML}{FF4136}
 \definecolor{orange}{HTML}{FF851B}
 \definecolor{lightpurple}{HTML}{F012BE}
 \definecolor{purple}{HTML}{B10DC9}
-\definecolor{lightgray}{HTML}{999999}
+\definecolor{lightgray}{HTML}{777777}
 \definecolor{gray}{HTML}{555555}
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{white}{HTML}{eeeeee}
@@ -31,7 +33,8 @@
 \colorlet{headerBackground}{gray}
 \colorlet{headerText}{white}
 \colorlet{headerEmph}{lightblue}
-\colorlet{titleText}{black}
+\colorlet{titleText}{blackblue}
+\colorlet{subTitleText}{darkblue}
 \colorlet{bodyText}{darkgray}
 \colorlet{tagText}{lightgray}
 
@@ -67,13 +70,14 @@
 \setlength{\TPVertModule}{1cm}
 \newenvironment{main} {
   	\let\oldsection\section
-	\renewcommand{\section}[2] {
+	\renewcommand{\section}[3] {
 		{
-			\vspace{0.25cm}~
-			\par\LARGE 
+			\vspace{0.3cm}~
+			\par
 			\fontfamily{phv}\selectfont 
-			\StrLen{##1}[\stringLength]
-			\textbf{\color{##2}\StrMid{##1}{1}{3}\color{titleText}\StrMid{##1}{4}{\stringLength}}
+			\StrLen{##2}[\stringLength]
+			%\textbf{\color{##3}\StrMid{##2}{1}{3}\color{titleText}\StrMid{##2}{4}{\stringLength}}
+			\textbf{\LARGE\color{##3}##2}
 		}
 	}
 
@@ -103,7 +107,8 @@
 			\StrLen{##1}[\stringLength]
 			\FPeval{\leftBreak}{clip(\stringLength - 3)}
 			\FPeval{\rightBreak}{clip(\stringLength - 2)}
-			\textbf{\color{titleText}\StrMid{##1}{1}{\leftBreak}\color{##2}\StrMid{##1}{\rightBreak}{\stringLength}}
+			%\textbf{\color{titleText}\StrMid{##1}{1}{\leftBreak}\color{##2}\StrMid{##1}{\rightBreak}{\stringLength}}
+			\textbf{\color{##2}##1}
 			
 		}
 		\vspace{-0.4cm}~
@@ -128,6 +133,7 @@
 
 \newenvironment{entrylist} {
 	\begin{tabular*} {\textwidth}{@{\extracolsep{\fill}}ll}
+	\vspace{-0.2cm}~
 } {
 	\end{tabular*}
 	\vspace{-1.0cm}~
@@ -138,9 +144,9 @@
 	\vspace{-0.1cm}
  	\parbox[t]{3.5cm}{#1} &\parbox[t]{8.5cm} {
 		\fontfamily{phv}\selectfont
- 		\textbf{#2} \hfill \color{tagText}#3\\
+ 		\textbf{\color{titleText}#2} \hfill \color{tagText}#3\\
 		\StrLen{#4}[\stringLength]
-  		\ifthenelse{\equal{\stringLength}{0}}{}{\color{titleText}\emph{#4}\\}
+  		\ifthenelse{\equal{\stringLength}{0}}{}{\color{subTitleText}\emph{#4}\\}
 		\ifthenelse{\equal{\stringLength}{0}}{}{\color{bodyText}#5\\}
  	}
 }
@@ -150,3 +156,7 @@
 	\raggedleft\parbox[t]{4.3cm}{\raggedleft #1} & \parbox[t]{1cm}{\hfill \emph{#2}}\\
 }
 
+\newcommand{\iconentry}[2] {
+	\fontfamily{phv}\selectfont
+	#1 \ \parbox[t]{0.3cm}{\centering#2}
+}
