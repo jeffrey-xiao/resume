@@ -45,7 +45,7 @@
 
 \newcommand{\header}[3] {
 	\begin{tikzpicture}[remember picture, overlay]
-		\node [rectangle, fill=headerBackground, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north) {
+		\node [rectangle, fill=headerBackground, anchor=north, minimum width=\paperwidth, minimum height=3.5cm] (box) at (current page.north) {
 
 		};
     	\node [anchor=center] (name) at (box) {
@@ -78,14 +78,14 @@
 			\StrLen{##2}[\stringLength]
 			%\textbf{\color{##3}\StrMid{##2}{1}{3}\color{titleText}\StrMid{##2}{4}{\stringLength}}
 			%\parbox[t]{12.15cm}{\hfill\textbf{\LARGE\color{##3}##2}}
-			\ \textbf{\LARGE\color{##3}##2}
+			\textbf{\LARGE\color{##3}##2}
 		}
 	}
 
 	\begin{textblock}{3.6}(1.5, 4.25)
 	\begin{flushleft}
 	\obeycr
-	\vspace{-1.0cm}~
+	\vspace{-1.5cm}~
 }{
 	\restorecr
 	\end{flushleft}
@@ -120,7 +120,7 @@
 	\begin{textblock}{5.8}(14.5, 4.33)
 	\begin{flushleft}
 	\obeycr
-	\vspace{-0.65cm}~
+	\vspace{-1.1cm}~
 }{
 	\restorecr
 	\end{flushleft}
@@ -143,7 +143,7 @@
 \newcommand{\rightentry}[5] {
 	\fontfamily{phv}\selectfont
 	\vspace{-0.1cm}
- 	\parbox[t]{3.5cm}{#1} &\parbox[t]{8.5cm} {
+ 	\hspace{-0.05cm}\parbox[t]{3.5cm}{#1} &\parbox[t]{8.5cm} {
 		\fontfamily{phv}\selectfont
  		\textbf{\color{titleText}#2} \hfill \color{tagText}#3\\
 		\StrLen{#4}[\stringLength]
@@ -154,7 +154,7 @@
 \newcommand{\leftentry}[2] {
 	\fontfamily{phv}\selectfont
 	\vspace{-0.2cm}
-	\raggedright\parbox[t]{1.0cm}{\raggedright \emph{#1}} & \parbox[t]{4.3cm}{#2}\\
+	\hspace{-0.05cm}\raggedright\parbox[t]{1.0cm}{\emph{#1}} & \parbox[t]{4.3cm}{#2}\\
 }
 
 \newcommand{\iconentry}[2] {
