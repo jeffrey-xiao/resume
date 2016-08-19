@@ -48,7 +48,7 @@
 		\node [rectangle, fill=headerBackground, anchor=north, minimum width=\paperwidth, minimum height=3.5cm] (box) at (current page.north) {
 
 		};
-    	\node [anchor=center] (name) at (box) {
+    	\node [anchor=center] (name) at ([yshift=0.2cm]box) {
     		\Huge
 			\fontfamily{phv}\selectfont
       		{\color{headerText} #1}{\color{headerEmph} \textbf{#2}}
