@@ -143,11 +143,11 @@
 \newcommand{\rightentry}[5] {
 	\fontfamily{phv}\selectfont
 	\vspace{-0.1cm}
- 	\hspace{-0.05cm}\parbox[t]{3.5cm}{#1} &\parbox[t]{8.5cm} {
+ 	\hspace{-0.05cm}\parbox[t]{12cm} {
 		\fontfamily{phv}\selectfont
- 		\textbf{\color{titleText}#2} \hfill \color{tagText}#3\\
+ 		\textbf{\color{titleText}#2} \hfill \color{tagText}\textbf{#3}\\
 		\StrLen{#4}[\stringLength]
-  		\ifthenelse{\equal{\stringLength}{0}}{}{\color{subTitleText}\emph{#4}\\}
+  		\color{subTitleText}\emph{#4}\hfill \color{tagText}#1\\
 		\ifthenelse{\equal{\stringLength}{0}}{}{\color{bodyText}#5\\}
  	}
 }
