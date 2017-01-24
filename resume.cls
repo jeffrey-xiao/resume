@@ -37,27 +37,27 @@
 \colorlet{subTitleText}{darkblue}
 \colorlet{bodyText}{darkgray}
 \colorlet{tagText}{lightgray}
+\colorlet{accent}{red}
 
 \pagenumbering{gobble}
 \noexpandarg
+\newcounter{index}
 
 % Header
 
-\newcommand{\header}[3] {
+\newcommand{\header}[6] {
 	\begin{tikzpicture}[remember picture, overlay]
-		\node [rectangle, fill=headerBackground, anchor=north, minimum width=\paperwidth, minimum height=3.5cm] (box) at (current page.north) {
-
-		};
-    	\node [anchor=center] (name) at ([yshift=0.2cm]box) {
+		\node [rectangle, fill=headerBackground, anchor=north, minimum width=\paperwidth, minimum height=3.5cm] (box) at (current page.north) {};
+    	\node [anchor=center] (name) at ([yshift=0.5cm]box) {
     		\Huge
 			\fontfamily{phv}\selectfont
-      		{\color{headerText} #1}{\color{headerEmph} \textbf{#2}}
+      		{\color{headerText} #1}{\color{headerEmph} #2}
     	};
-    	\node [anchor=north] at (name.south) {
-    		\color{headerText}
-    		\Large
+    	\node [anchor=north, align=center] at (name.south)[yshift=-0.1cm] {
 			\fontfamily{phv}\selectfont
-      		{#3}
+      		\color{headerText}#3 \color{red}\textbf{//} \color{headerText} #4 \\
+      		\fontfamily{phv}\selectfont
+      		\color{headerText}#5 \color{red}\textbf{//} \color{headerText} #6 \\ 
     	};
 	\end{tikzpicture}
 	\vspace{2.5cm}
@@ -70,15 +70,12 @@
 \setlength{\TPVertModule}{1cm}
 \newenvironment{main} {
   	\let\oldsection\section
-	\renewcommand{\section}[3] {
+	\renewcommand{\section}[2] {
 		{
 			\vspace{0.3cm}~
 			\par
 			\fontfamily{phv}\selectfont 
-			\StrLen{##2}[\stringLength]
-			%\textbf{\color{##3}\StrMid{##2}{1}{3}\color{titleText}\StrMid{##2}{4}{\stringLength}}
-			%\parbox[t]{12.15cm}{\hfill\textbf{\LARGE\color{##3}##2}}
-			\textbf{\LARGE\color{##3}##2}
+			\textbf{\LARGE\color{##2}##1}
 		}
 	}
 
@@ -101,18 +98,13 @@
   	\let\oldsection\section
   	\renewcommand{\section}[2] {
 		{
-			~
+			\vspace{0.5cm}
 			\par\Large 
 			\fontfamily{phv}\selectfont
-
-			\StrLen{##1}[\stringLength]
-			\FPeval{\leftBreak}{clip(\stringLength - 3)}
-			\FPeval{\rightBreak}{clip(\stringLength - 2)}
-			%\textbf{\color{titleText}\StrMid{##1}{1}{\leftBreak}\color{##2}\StrMid{##1}{\rightBreak}{\stringLength}}
 			\textbf{\color{##2}##1}
 			
 		}
-		\vspace{-0.4cm}~
+		\vspace{-0.2cm}~
 	}
 	
 	\normalsize
@@ -146,9 +138,8 @@
  	\hspace{-0.05cm}\parbox[t]{12cm} {
 		\fontfamily{phv}\selectfont
  		\textbf{\color{titleText}#2} \hfill \color{tagText}\textbf{#3}\\
-		\StrLen{#4}[\stringLength]
   		\color{subTitleText}\emph{#4}\hfill \color{tagText}#1\\
-		\ifthenelse{\equal{\stringLength}{0}}{}{\color{bodyText}#5\\}
+		\color{bodyText}#5\\
  	}
 }
 \newcommand{\leftentry}[2] {
@@ -160,4 +151,13 @@
 \newcommand{\iconentry}[2] {
 	\fontfamily{phv}\selectfont
 	\parbox[t]{0.3cm}{\centering#1} \ #2 
+}
+
+\def\replace#1#2#3{%
+ \def\tmp##1#2{##1#3\tmp}%
+   \tmp#1\stopreplace#2\stopreplace}
+\def\stopreplace#1\stopreplace{}
+
+\newcommand\iterate[1]{
+	\replace{#1}{,}{\color{red}\ // \color{bodyText} }
 }
