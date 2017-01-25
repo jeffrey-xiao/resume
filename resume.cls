@@ -21,7 +21,10 @@
 \definecolor{blackblue}{HTML}{00070C}
 \definecolor{lightgreen}{HTML}{01FF70}
 \definecolor{green}{HTML}{2ECC40}
-\definecolor{red}{HTML}{FF4136}
+\definecolor{pink}{HTML}{D98880}
+\definecolor{lightred}{HTML}{A93226}
+\definecolor{darkred}{HTML}{641E16}
+\definecolor{blackred}{HTML}{400C07}
 \definecolor{orange}{HTML}{FF851B}
 \definecolor{lightpurple}{HTML}{F012BE}
 \definecolor{purple}{HTML}{B10DC9}
@@ -32,12 +35,12 @@
 
 \colorlet{headerBackground}{gray}
 \colorlet{headerText}{white}
-\colorlet{headerEmph}{lightblue}
-\colorlet{titleText}{blackblue}
-\colorlet{subTitleText}{darkblue}
+\colorlet{headerEmph}{pink} % lightblue
+\colorlet{titleText}{blackred} % blackblue
+\colorlet{subTitleText}{darkred} % darkblue
 \colorlet{bodyText}{darkgray}
 \colorlet{tagText}{lightgray}
-\colorlet{accent}{red}
+\colorlet{accent}{lightred}
 
 \pagenumbering{gobble}
 \noexpandarg
@@ -55,9 +58,9 @@
     	};
     	\node [anchor=north, align=center] at (name.south)[yshift=-0.1cm] {
 			\fontfamily{phv}\selectfont
-      		\color{headerText}#3 \color{red}\textbf{//} \color{headerText} #4 \\
+      		\color{headerText}#3 \color{pink}\textbf{//} \color{headerText} #4 \\
       		\fontfamily{phv}\selectfont
-      		\color{headerText}#5 \color{red}\textbf{//} \color{headerText} #6 \\ 
+      		\color{headerText}#5 \color{pink}\textbf{//} \color{headerText} #6 \\ 
     	};
 	\end{tikzpicture}
 	\vspace{2.5cm}
@@ -70,19 +73,19 @@
 \setlength{\TPVertModule}{1cm}
 \newenvironment{main} {
   	\let\oldsection\section
-	\renewcommand{\section}[2] {
+	\renewcommand{\section}[1] {
 		{
 			\vspace{0.3cm}~
 			\par
 			\fontfamily{phv}\selectfont 
-			\textbf{\LARGE\color{##2}##1}
+			\textbf{\LARGE\color{titleText}##1}
 		}
 	}
 
 	\begin{textblock}{3.6}(1.5, 4.25)
 	\begin{flushleft}
 	\obeycr
-	\vspace{-1.5cm}~
+	\vspace{-1.15cm}~
 }{
 	\restorecr
 	\end{flushleft}
@@ -96,12 +99,12 @@
 \setlength{\TPVertModule}{1cm}
 \newenvironment{sidebar} {
   	\let\oldsection\section
-  	\renewcommand{\section}[2] {
+  	\renewcommand{\section}[1] {
 		{
 			\vspace{0.5cm}
 			\par\Large 
 			\fontfamily{phv}\selectfont
-			\textbf{\color{##2}##1}
+			\textbf{\color{titleText}##1}
 			
 		}
 		\vspace{-0.2cm}~
@@ -112,7 +115,7 @@
 	\begin{textblock}{5.8}(14.5, 4.33)
 	\begin{flushleft}
 	\obeycr
-	\vspace{-1.1cm}~
+	\vspace{-0.8cm}~
 }{
 	\restorecr
 	\end{flushleft}
@@ -137,8 +140,8 @@
 	\vspace{-0.1cm}
  	\hspace{-0.05cm}\parbox[t]{12cm} {
 		\fontfamily{phv}\selectfont
- 		\textbf{\color{titleText}#2} \hfill \color{tagText}\textbf{#3}\\
-  		\color{subTitleText}\emph{#4}\hfill \color{tagText}#1\\
+ 		\textbf{\color{subTitleText}#2} \hfill \color{tagText}\textbf{#3}\\
+  		\color{lightred}\emph{#4}\hfill \color{tagText}#1\\
 		\color{bodyText}#5\\
  	}
 }
@@ -159,5 +162,5 @@
 \def\stopreplace#1\stopreplace{}
 
 \newcommand\iterate[1]{
-	\replace{#1}{,}{\color{red}\ // \color{bodyText} }
+	\replace{#1}{,}{\color{accent}\ // \color{bodyText} }
 }
