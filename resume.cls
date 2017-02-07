@@ -21,7 +21,7 @@
 \definecolor{blackblue}{HTML}{00070C}
 \definecolor{lightgreen}{HTML}{01FF70}
 \definecolor{green}{HTML}{2ECC40}
-\definecolor{pink}{HTML}{D98880}
+\definecolor{pink}{HTML}{C26F67}
 \definecolor{lightred}{HTML}{A93226}
 \definecolor{darkred}{HTML}{641E16}
 \definecolor{blackred}{HTML}{400C07}
@@ -29,7 +29,7 @@
 \definecolor{lightpurple}{HTML}{F012BE}
 \definecolor{purple}{HTML}{B10DC9}
 \definecolor{lightgray}{HTML}{777777}
-\definecolor{gray}{HTML}{555555}
+\definecolor{gray}{HTML}{444444}
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{white}{HTML}{eeeeee}
 
