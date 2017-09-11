@@ -144,6 +144,7 @@
     \color{bodyText}#5\\
   }
 }
+
 \newcommand{\leftentry}[2] {
   \fontfamily{phv}\selectfont
   \vspace{-0.2cm}
@@ -162,4 +163,10 @@
 
 \newcommand\iterate[1]{
   \replace{#1}{,}{\color{accent}\ // \color{bodyText} }
+}
+
+\newcommand\subheader[1]{
+  \fontfamily{phv}\selectfont
+  \vspace{0.2cm}
+  \large\color{accent}#1\color{bodyText}\normalsize
 }
