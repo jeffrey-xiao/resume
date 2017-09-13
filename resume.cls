@@ -77,7 +77,7 @@
       \vspace{0.3cm}~
       \par
       \fontfamily{phv}\selectfont
-      \textbf{\LARGE\color{titleText}##1}
+      \color{titleText}\MakeUppercase{\LARGE##1}%
     }
   }
 
@@ -103,7 +103,7 @@
       \vspace{0.5cm}
       \par\Large
       \fontfamily{phv}\selectfont
-      \textbf{\color{titleText}##1}
+      \color{titleText}\MakeUppercase{##1}%
 
     }
     \vspace{-0.2cm}~
@@ -168,5 +168,5 @@
 \newcommand\subheader[1]{
   \fontfamily{phv}\selectfont
   \vspace{0.2cm}
-  \large\color{accent}#1\color{bodyText}\normalsize
+  \large\color{accent}\MakeUppercase{#1}\color{bodyText}\normalsize
 }
