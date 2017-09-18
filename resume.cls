@@ -77,7 +77,7 @@
       \vspace{0.3cm}~
       \par
       \fontfamily{phv}\selectfont
-      \color{titleText}\MakeUppercase{\LARGE##1}%
+      \color{titleText}\LARGE##1%
     }
   }
 
@@ -103,7 +103,7 @@
       \vspace{0.5cm}
       \par\Large
       \fontfamily{phv}\selectfont
-      \color{titleText}\MakeUppercase{##1}%
+      \color{titleText}##1%
 
     }
     \vspace{-0.2cm}~
@@ -136,7 +136,6 @@
 
 \newcommand{\rightentry}[5] {
   \fontfamily{phv}\selectfont
-  \vspace{-0.1cm}
   \hspace{-0.05cm}\parbox[t]{12cm} {
     \fontfamily{phv}\selectfont
     \textbf{\color{subTitleText}#2} \hfill \color{tagText}\textbf{#3}\\
@@ -168,5 +167,5 @@
 \newcommand\subheader[1]{
   \fontfamily{phv}\selectfont
   \vspace{0.2cm}
-  \large\color{accent}\MakeUppercase{#1}\color{bodyText}\normalsize
+  \large\color{accent}#1\color{bodyText}\normalsize
 }
