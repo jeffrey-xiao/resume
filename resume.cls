@@ -73,11 +73,12 @@
   \let\oldsection\section
   \renewcommand{\section}[1] {
     {
-      \vspace{0.5cm}~
+      \vspace{0.2cm}~
       \par
       \fontfamily{phv}\selectfont
       \color{titleText}\LARGE##1%
     }
+    ~
   }
 
   \begin{textblock}{3.6}(1.5, 4.25)
@@ -99,13 +100,12 @@
     \let\oldsection\section
     \renewcommand{\section}[1] {
     {
-      \vspace{0.5cm}
-      \par\LARGE
+      \vspace{0.2cm}~
+      \par
       \fontfamily{phv}\selectfont
-      \color{titleText}##1%
-
+      \color{titleText}\LARGE##1%
     }
-    \vspace{-0.2cm}~
+    \vspace{0.25cm}~
   }
 
   \normalsize
@@ -113,7 +113,7 @@
   \begin{textblock}{5.8}(14.5, 4.33)
   \begin{flushleft}
   \obeycr
-  \vspace{-0.8cm}~
+  \vspace{-1cm}~
 }{
   \restorecr
   \end{flushleft}
@@ -130,7 +130,7 @@
   \vspace{-0.2cm}~
 } {
   \end{tabular*}
-  \vspace{-1.0cm}~
+  \vspace{-0.7cm}~
 }
 
 \newcommand{\checknextarg}{\@ifnextchar\bgroup{\gobblenextarg}{\end{itemize}}}
