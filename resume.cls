@@ -12,6 +12,7 @@
 \RequirePackage{xstring}
 \RequirePackage[nomessages]{fp}
 \RequirePackage{ifthen}
+\RequirePackage{enumitem}
 
 % Color declaration
 
@@ -48,22 +49,20 @@
 
 % Header
 
-\newcommand{\header}[6] {
+\newcommand{\header}[4] {
   \begin{tikzpicture}[remember picture, overlay]
     \node [rectangle, anchor=north, minimum width=\paperwidth, minimum height=3.5cm] (box) at (current page.north) {};
       \node [anchor=center] (name) at (box) {
-        \Huge
-        \fontfamily{phv}\selectfont
+        \Huge\fontfamily{phv}\selectfont
         {\color{headerText} #1}{\color{headerEmph} #2}
       };
-      \node [anchor=north, align=center] at (name.south)[yshift=-0.1cm] {
-        \fontfamily{phv}\selectfont
-        \color{headerText}#3 \color{pink}\textbf{//} \color{headerText} #4 \\
-        \fontfamily{phv}\selectfont
-        \color{headerText}#5 \color{pink}\textbf{//} \color{headerText} #6
+      \node [anchor=north, align=center] (contact) at (name.south) {
+        \color{bodyText}\fontfamily{phv}\selectfont #3
+      };
+      \node [anchor=north, align=center] (links) at (contact.south) {
+        \color{bodyText}\fontfamily{phv}\selectfont #4
       };
   \end{tikzpicture}
-  \vspace{2.5cm}
 }
 
 % Main
@@ -74,7 +73,7 @@
   \let\oldsection\section
   \renewcommand{\section}[1] {
     {
-      \vspace{0.3cm}~
+      \vspace{0.5cm}~
       \par
       \fontfamily{phv}\selectfont
       \color{titleText}\LARGE##1%
@@ -101,7 +100,7 @@
     \renewcommand{\section}[1] {
     {
       \vspace{0.5cm}
-      \par\Large
+      \par\LARGE
       \fontfamily{phv}\selectfont
       \color{titleText}##1%
 
@@ -119,7 +118,7 @@
   \restorecr
   \end{flushleft}
   \end{textblock}
-    \let\section\oldsection
+  \let\section\oldsection
 }
 
 % List
@@ -134,13 +133,20 @@
   \vspace{-1.0cm}~
 }
 
+\newcommand{\checknextarg}{\@ifnextchar\bgroup{\gobblenextarg}{\end{itemize}}}
+\newcommand{\gobblenextarg}[1]{\item[--] #1\@ifnextchar\bgroup{\gobblenextarg}{\end{itemize}}}
+\newcommand{\createlist}[1]{
+  \begin{itemize}[leftmargin=0.45cm, noitemsep, topsep=0.1cm]
+    \item[--]\color{bodyText}#1\checknextarg
+}
+
 \newcommand{\rightentry}[5] {
   \fontfamily{phv}\selectfont
-  \hspace{-0.05cm}\parbox[t]{12cm} {
+  \vspace{0.2cm}\hspace{-0.05cm}\parbox[t]{12.0cm} {
     \fontfamily{phv}\selectfont
     \textbf{\color{subTitleText}#2} \hfill \color{tagText}\textbf{#3}\\
-      \color{lightred}\emph{#4}\hfill \color{tagText}#1\\
-    \color{bodyText}#5\\
+    \color{lightred}\emph{#4}\hfill \color{tagText}#1
+    #5
   }
 }
 
@@ -152,7 +158,7 @@
 
 \newcommand{\iconentry}[2] {
   \fontfamily{phv}\selectfont
-  \parbox[t]{0.3cm}{\centering#1} \ #2
+  \parbox[t]{0.25cm}{\centering#1} \ #2
 }
 
 \def\replace#1#2#3{%
@@ -160,8 +166,9 @@
    \tmp#1\stopreplace#2\stopreplace}
 \def\stopreplace#1\stopreplace{}
 
+\newcommand\separator{\color{accent}// \color{bodyText}}
 \newcommand\iterate[1]{
-  \replace{#1}{,}{\color{accent}\ // \color{bodyText} }
+  \replace{#1}{,}{\ \separator}
 }
 
 \newcommand\subheader[1]{

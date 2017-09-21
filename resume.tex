@@ -7,18 +7,21 @@
 \makeatletter
 
 \begin{document}
-  \header{jeffrey}{xiao}{Software Engineer}{University of Waterloo}{1-(647)-919-3171}{jeffrey.xiao@uwaterloo.ca}
+  \header%
+    {jeffrey}%
+    {xiao}%
+    {\iterate{1-(647)-919-3171, jeffrey.xiao@uwaterloo.ca}}%
+    {\iterate{%
+      \iconentry{\faHome}{jeffreyxiao.me},%
+      \iconentry{\faGithub}{jeffrey-xiao},%
+      \iconentry{\faLinkedin}{jeffreyxiao}%
+    }}%
   \begin{sidebar}
     \vspace{-5pt}%
-    \section{Contact}
-      \iconentry{\faHome}{jeffrey-xiao.github.io}
-      \iconentry{\faGithub}{github.com/jeffrey-xiao}
-      \iconentry{\faLink}{devpost.com/jeffreyxiao}
-      \iconentry{\faLinkedin}{linkedin.com/in/jeffreyxiao}
     \section{Skills}\vspace{-0.2cm}
       \subheader{Proficient}
         \iterate{Java, C, C++, C\#, Python}
-        \iterate{JS, ES6, React, Node}
+        \iterate{JavaScript, React, Node}
         \iterate{Algorithms, Data Structures}
         \iterate{Linux}
       \subheader{Prior Experience}
@@ -26,12 +29,6 @@
       \subheader{Academically Exposed}
         \iterate{R, MATLAB, Octave}
         \iterate{Machine Learning}
-    \section{Certifications}
-      Certified Java SE 6 Programmer
-      Algorithms I \& II by \emph{Princeton}
-      Algorithms I \& II by \emph{Stanford}
-      Machine Learning by \emph{Stanford}
-      R Programming by \emph{Microsoft \& JHU}
     \section{Awards}
       \begin{entrylist}
         \leftentry{2017}{First at Greylock Hackfest}
@@ -42,96 +39,116 @@
         \leftentry{2015}{Silver at the Canadian Computing Olympiad}
         \leftentry{2015}{Platinum Division in USA Computing Olympiad}
       \end{entrylist}
+    \section{Certifications}
+      Certified Java SE 6 Programmer
+      Algorithms I \& II by \emph{Princeton}
+      Algorithms I \& II by \emph{Stanford}
+      Machine Learning by \emph{Stanford}
+      R Programming by \emph{Microsoft \& JHU}
+    \section{Education}\vspace{-0.2cm}
+      \subheader{University of Waterloo}
+      \textbf{Bachelor of Software Engineering}
+      2016-2021 \separator Waterloo, Canada
+      \begin{itemize}[leftmargin=0.45cm, noitemsep, topsep=0.0cm]%
+        \item[--] 96\% Cumulative Average
+        \item[--] Top Decile
+        \item[--] Dean's Honour List
+      \end{itemize}%
   \end{sidebar}
   \begin{main}
     \vspace{0.2cm}%
-    \section{Education}
-      \begin{entrylist}
-        \rightentry%
-        {Sept 2016 - Present}%
-        {University of Waterloo}%
-        {Waterloo, Canada}%
-        {Candidate for Bachelor of Software Engineering}%
-        {\iterate{96\% Cumulative Average, 4.0 cGPA, Top Decile}}
-      \end{entrylist}
     \section{Experience}
       \begin{entrylist}
         \rightentry%
-          {May 2017 - Sept 2017}%
+          {May 2017 -- Sep 2017}%
           {Yelp}%
           {San Francisco, California}%
           {Software Intern on Webcore}%
+          {\createlist{%
+            Modernized build pipeline and built tooling to migrate services  from Google Closure %
+            Library to ES6 and Webpack, and from npm to yarn. %
+          }%
           {%
-            Modernized build pipeline and built %
-            tooling to migrate services from Google Closure Library to ES6 and %
-            Webpack, and from npm to yarn. Scoped out and evaluated solutions %
-            for better client-side js error reporting. Implemented and rolled %
-            out infrastructure to process over 25 million errors every month %
-            to over 20 services. Helped developed infrastructure and tooling %
-            to migrate services to React, including server-side rendering of %
-            React components.%
-          }
+            Scoped out and evaluated solutions for better client-side js error reporting. %
+          }%
+          {%
+            Implemented and rolled out infrastructure to process over  25 million errors every %
+            month to over 20 services. %
+          }%
+          {%
+            Helped develop infrastructure and tooling to migrate services to React, including %
+            server-side rendering of React components. %
+          }}
         \rightentry%
-          {Nov 2015 - Sept 2016}%
+          {Nov 2015 -- Sep 2016}%
           {Ivy Global}%
           {Toronto, Ontario}%
           {Software Intern and Project Lead}%
+          {\createlist{%
+            Developed an ASP web application that displays SAT scores and statistics  for mock %
+            exams in real-time. %
+          }%
           {%
-            Developed an ASP web application that displays SAT scores and statistics %
-            for mock exams in real time. Led the development of a bubblesheet marker %
-            using .NET, convolutional neural networks, and custom imaging processing %
-            algorithms to process blurred, tilted, and imprecise images.%
-          }
+            Led the development of a bubblesheet marker  using .NET, convolutional neural %
+            networks, and custom imaging processing algorithms to process blurred, tilted, and %
+            imprecise images. %
+          }}
       \end{entrylist}
     \section{Projects}
       \begin{entrylist}
         \rightentry%
-          {Sept 2016}%
+          {Aug 2017}%
+          {inSight}%
+          {Greylock Hackfest}%
+          {goo.gl/Qy4TcJ}%
+          {\createlist{%
+            Fully interactive AR headset that uses both machine learning and custom image %
+            processing algorithms to display information about the user's point of focus. %
+          }%
+          {%
+            Applied gaze tracking to enable full control via eye movement. %
+          }%
+          {%
+            Used Bing and IoT technology to control home appliances and learn about surroundings %
+            in an intuitive way. %
+          }}
+        \rightentry%
+          {Sep 2016}%
           {Emergicare}%
           {Hack the North}%
           {devpost.com/software/emergicare-hsup49}%
+          {\createlist{%
+            Android background service that sends optimized GPS and network locations  by text to %
+            a specified number every time 911 is called. %
+          }%
           {%
-            Android background service that sends optimized GPS and network locations %
-            by text to a specified number every time 911 is called. The operator %
-            dashboard supports routing of emergency vehicles simulated by the Waterloo %
-            bus system. Built with Android, Twilio, Node, React, and Firebase. %
-            \textbf{Related News}: \color{lightred}codx.ca/news/blog-posts/open-data-opens-eyes-at-hack-the-north%
-          }
-        \rightentry%
-          {Jun 2016}%
-          {React Chess}%
-          {Personal}%
-          {github.com/jeffrey-xiao/React-Chess}%
+            Built an operator  dashboard that support routing of emergency vehicles simulated by %
+            the Grand River Transit system. %
+          }%
           {%
-            Multiplayer chess written in React and Socket. Supports different modes %
-            (madhouse, bughouse, normal), a timer, a chatroom, and a history of moves.%
-          }
-        \rightentry%
-          {Jan 2016}%
-          {SwagMusic.js}%
-          {Hack UofT}%
-          {github.com/xelendt/swagmusic.js}%
+            Developed with Android, Twilio, Node, React, and Firebase. %
+          }%
           {%
-            3D model that dances to music. Built with WebGL and Web Audio API.%
-          }
+            \textbf{Related News}: \color{lightred}goo.gl/S5u1vr%
+          }}
         \rightentry%
           {Nov 2015}%
           {In The Loop}%
           {Hack Western}%
           {github.com/jeffrey-xiao/in-the-loop}%
-          {%
-            AngularJS application and Python backend that aggregates current news %
-            information based on trending Twitter keywords in live time.%
-          }
+          {\createlist{%
+            AngularJS application and Python backend that aggregates current news information %
+            based on trending Twitter keywords in real-time. %
+          }}
         \rightentry%
           {Aug 2015}%
           {Resistora}%
           {Tech Retreat}%
           {devpost.com/software/resistora}%
-          {%
-            Android application that determines the resistance of various resistors %
-            using the camera and a custom image analysis algorithm.%
-          }
+          {\createlist{%
+            Android application that uses a custom image analysis algorithm to determine the %
+            resistance of various resistors. %
+          }}
       \end{entrylist}
   \end{main}
 \end{document}
