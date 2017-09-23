@@ -137,7 +137,7 @@
 \newcommand{\gobblenextarg}[1]{\item[--] #1\@ifnextchar\bgroup{\gobblenextarg}{\end{itemize}}}
 \newcommand{\createlist}[1]{
   \begin{itemize}[leftmargin=0.45cm, noitemsep, topsep=0.1cm]
-    \item[--]\color{bodyText}#1\checknextarg
+    \color{bodyText}\item[--]#1\checknextarg
 }
 
 \newcommand{\rightentry}[5] {
