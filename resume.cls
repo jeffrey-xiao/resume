@@ -153,7 +153,7 @@
 \newcommand{\leftentry}[2] {
   \fontfamily{phv}\selectfont
   \vspace{-0.2cm}
-  \hspace{-0.05cm}\raggedright\parbox[t]{1.0cm}{\emph{#1}} & \parbox[t]{4.3cm}{#2}\\
+  \hspace{-0.05cm}\raggedright\parbox[t]{4.2cm}{#1} & \parbox[t]{1.0cm}{\emph{#2}}\\
 }
 
 \newcommand{\iconentry}[2] {
