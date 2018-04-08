@@ -78,7 +78,6 @@
       \fontfamily{phv}\selectfont
       \color{titleText}\LARGE##1%
     }
-    ~
   }
 
   \begin{textblock}{3.6}(1.5, 4.25)
