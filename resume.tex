@@ -1,9 +1,12 @@
+%!TEX TS-program = xelatex
 \documentclass{resume}
 
 \usepackage[letterpaper]{geometry}
-\usepackage{fontawesome}
+\usepackage{fontspec}
 \usepackage{xcolor}
 \usepackage{hyperref}
+
+\newfontfamily{\FA}{Font Awesome 5 Brands}
 
 \makeatletter
 
@@ -13,19 +16,19 @@
     {xiao}%
     {\iterate{1-(647)-919-3171, \href{mailto:jeffrey.xiao@uwaterloo.ca}{jeffrey.xiao@uwaterloo.ca}}}%
     {\iterate{%
-      \iconentry{\faHome}{\href{https://jeffreyxiao.me/}{jeffreyxiao.me}},%
-      \iconentry{\faGithub}{\href{https://github.com/jeffrey-xiao/}{jeffrey-xiao}},%
-      \iconentry{\faLinkedin}{\href{https://www.linkedin.com/in/jeffreyxiao}{jeffreyxiao}}%
+      \iconentry{\FA\symbol{"F015}}{\href{https://jeffreyxiao.me/}{jeffreyxiao.me}},%
+      \iconentry{\FA\symbol{"F09B}}{\href{https://github.com/jeffrey-xiao/}{jeffrey-xiao}},%
+      \iconentry{\FA\symbol{"F0E1}}{\href{https://www.linkedin.com/in/jeffreyxiao}{jeffreyxiao}}%
     }}%
   \begin{sidebar}
-    \section{Skills}\vspace{-0.25cm}
+    \section{SKILLS}
       \subheader{Proficient}
         \iterate{Java, C, C++, C\#, Rust}
         \iterate{JavaScript, React, Node}
         \iterate{Python, Git, Linux}
       \subheader{Familiar}
         \iterate{Bash, Go, Scala}
-    \section{Awards}
+    \section{AWARDS}
       \begin{itemize}[leftmargin=0.45cm, topsep=0.0cm]%
         \item[--] First, Greylock Hackfest \separator\emph{2017}
         \item[--] Second, MIT Battlecode \separator\emph{2017}
@@ -35,23 +38,23 @@
         \item[--] Silver, Canadian Computing Olympiad \separator\emph{2015}
         \item[--] Platinum Division, USA Computing Olympiad \separator\emph{2015}
       \end{itemize}%
-    \section{Certifications}
+    \section{CERTIFICATIONS}
       \begin{itemize}[leftmargin=0.45cm, noitemsep, topsep=0.0cm]%
         \item[--] Certified Java SE 6 Programmer
         \item[--] Algorithms I \& II, \emph{Princeton}
         \item[--] Machine Learning, \emph{Stanford}
         \item[--] R Programming, \emph{Microsoft \& JHU }
       \end{itemize}%
-    \section{Education}
+    \section{EDUCATION}
       \subheader{University of Waterloo}
-      \color{tagText}\textbf{Bachelor of Software Engineering}
-      \color{tagText}2016 -- 2021 \separator\color{tagText}Waterloo, Canada
+      \color{tagText}Bachelor of Software Engineering
+      \color{subTagText}2016 -- 2021 \separator\color{subTagText}Waterloo, Canada
       \color{bodyText}%
       \begin{itemize}[leftmargin=0.45cm, noitemsep, topsep=0.0cm]%
         \item[--] 93.15\% Cumulative Average
         \item[--] Dean's Honour List (3 Terms)
       \end{itemize}%
-    \section{Interests}
+    \section{INTERESTS}
       \begin{itemize}[leftmargin=0.45cm, noitemsep, topsep=0.0cm]%
         \item[--] Distributed Systems
         \item[--] Data Infrastructure
@@ -61,7 +64,7 @@
   \end{sidebar}
   \begin{main}
     \vspace{0.2cm}%
-    \section{Experience}
+    \section{EXPERIENCE}
       \begin{entrylist}
         \rightentry%
           {Jan 2018 -- Apr 2018}%
@@ -122,7 +125,7 @@
             }%
           }
       \end{entrylist}
-    \section{Projects}
+    \section{PROJECTS}
       \begin{entrylist}
         \rightentry%
           {Rust, Distributed Systems}%
@@ -170,7 +173,7 @@
               the Grand River Transit system. %
             }%
             {%
-              \textbf{Related blog post}: \color{lightred}\href{https://goo.gl/S5u1vr}{goo.gl/S5u1vr}%
+              \textit{Related blog post}: \color{lightred}\href{https://goo.gl/S5u1vr}{goo.gl/S5u1vr}%
             }%
           }
       \end{entrylist}

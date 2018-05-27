@@ -13,39 +13,35 @@
 \RequirePackage[nomessages]{fp}
 \RequirePackage{ifthen}
 \RequirePackage{enumitem}
+\RequirePackage{fontspec}
 
 % Color declaration
 
-\definecolor{lightblue}{HTML}{87CEFA}
-\definecolor{blue}{HTML}{0873B5}
-\definecolor{darkblue}{HTML}{043757}
-\definecolor{blackblue}{HTML}{00070C}
-\definecolor{lightgreen}{HTML}{01FF70}
-\definecolor{green}{HTML}{2ECC40}
 \definecolor{pink}{HTML}{C26F67}
 \definecolor{lightred}{HTML}{A93226}
 \definecolor{darkred}{HTML}{641E16}
 \definecolor{blackred}{HTML}{400C07}
-\definecolor{orange}{HTML}{FF851B}
-\definecolor{lightpurple}{HTML}{F012BE}
-\definecolor{purple}{HTML}{B10DC9}
-\definecolor{lightgray}{HTML}{777777}
-\definecolor{gray}{HTML}{444444}
-\definecolor{darkgray}{HTML}{333333}
-\definecolor{white}{HTML}{eeeeee}
+\definecolor{lightgray}{HTML}{5B7085}
+\definecolor{darkgray}{HTML}{1B2228}
+\definecolor{white}{HTML}{EEEEEE}
 
 \colorlet{headerBackground}{white}
-\colorlet{headerText}{gray}
-\colorlet{headerEmph}{pink} % lightblue
-\colorlet{titleText}{blackred} % blackblue
-\colorlet{subTitleText}{darkred} % darkblue
+\colorlet{headerText}{lightgray}
+\colorlet{headerEmph}{pink}
+\colorlet{titleText}{blackred}
+\colorlet{subTitleText}{darkred}
 \colorlet{bodyText}{darkgray}
-\colorlet{tagText}{lightgray}
+\colorlet{tagText}{darkgray}
+\colorlet{subTagText}{lightgray}
 \colorlet{accent}{lightred}
 
 \pagenumbering{gobble}
 \noexpandarg
 \newcounter{index}
+
+% Fonts
+\newfontfamily\bodyfont[Ligatures=TeX]{Raleway}
+\newfontfamily\headerfont[Ligatures=TeX]{Josefin Sans Light}
 
 % Header
 
@@ -53,14 +49,14 @@
   \begin{tikzpicture}[remember picture, overlay]
     \node [rectangle, anchor=north, minimum width=\paperwidth, minimum height=3.5cm] (box) at (current page.north) {};
       \node [anchor=center] (name) at (box) {
-        \Huge\fontfamily{phv}\selectfont
+        \fontsize{30}{60}\headerfont\selectfont
         {\color{headerText} #1}{\color{headerEmph} #2}
       };
       \node [anchor=north, align=center] (contact) at (name.south) {
-        \color{bodyText}\fontfamily{phv}\selectfont #3
+        \color{bodyText}\bodyfont\selectfont #3
       };
       \node [anchor=north, align=center] (links) at (contact.south) {
-        \color{bodyText}\fontfamily{phv}\selectfont #4
+        \color{bodyText}\bodyfont\selectfont #4
       };
   \end{tikzpicture}
 }
@@ -73,17 +69,18 @@
   \let\oldsection\section
   \renewcommand{\section}[1] {
     {
-      \vspace{0.2cm}~
+      \vspace{0.05cm}~
       \par
-      \fontfamily{phv}\selectfont
+      \huge\headerfont\selectfont
       \color{titleText}\LARGE##1%
+      \vspace{-0.25cm}~
     }
   }
 
   \begin{textblock}{3.6}(1.5, 4.25)
   \begin{flushleft}
   \obeycr
-  \vspace{-1.15cm}~
+  \vspace{-1.50cm}~
 }{
   \restorecr
   \end{flushleft}
@@ -96,23 +93,21 @@
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
 \newenvironment{sidebar} {
-    \let\oldsection\section
-    \renewcommand{\section}[1] {
+  \let\oldsection\section
+  \renewcommand{\section}[1] {
     {
-      \vspace{0.2cm}~
+      \vspace{0.25cm}~
       \par
-      \fontfamily{phv}\selectfont
+      \headerfont\selectfont
       \color{titleText}\LARGE##1%
+      \vspace{0.10cm}~
     }
-    \vspace{0.25cm}~
   }
 
-  \normalsize
-  \fontfamily{phv}\selectfont
   \begin{textblock}{5.8}(14.5, 4.33)
   \begin{flushleft}
   \obeycr
-  \vspace{-1cm}~
+  \vspace{-1.50cm}~
 }{
   \restorecr
   \end{flushleft}
@@ -126,10 +121,10 @@
 
 \newenvironment{entrylist} {
   \begin{tabular*} {\textwidth}{@{\extracolsep{\fill}}ll}
-  \vspace{-0.2cm}~
+  \vspace{-0.3cm}~
 } {
   \end{tabular*}
-  \vspace{-0.7cm}~
+  \vspace{-0.3cm}~
 }
 
 \newcommand{\checknextarg}{\@ifnextchar\bgroup{\gobblenextarg}{\end{itemize}}}
@@ -140,23 +135,17 @@
 }
 
 \newcommand{\rightentry}[5] {
-  \fontfamily{phv}\selectfont
-  \vspace{0.2cm}\hspace{-0.05cm}\parbox[t]{12.0cm} {
-    \fontfamily{phv}\selectfont
-    \textbf{\color{subTitleText}#2} \hfill \color{tagText}\textbf{#3}\\
-    \color{lightred}\emph{#4}\hfill \color{tagText}#1
+  \bodyfont\selectfont
+  \hspace{-0.05cm}\parbox[t]{12.0cm} {
+    \bodyfont\selectfont
+    \color{subTitleText}#2 \hfill \color{tagText}#3\\
+    \color{lightred}#4 \hfill \color{subTagText}#1
     #5
   }
 }
 
-\newcommand{\leftentry}[2] {
-  \fontfamily{phv}\selectfont
-  \vspace{-0.2cm}
-  \hspace{-0.05cm}\raggedright\parbox[t]{4.2cm}{#1} & \parbox[t]{1.0cm}{\emph{#2}}\\
-}
-
 \newcommand{\iconentry}[2] {
-  \fontfamily{phv}\selectfont
+  \bodyfont\selectfont
   \parbox[t]{0.25cm}{\centering#1} \ #2
 }
 
@@ -171,7 +160,7 @@
 }
 
 \newcommand\subheader[1]{
-  \fontfamily{phv}\selectfont
+  \bodyfont\selectfont
   \vspace{0.2cm}
   \large\color{accent}#1\color{bodyText}\normalsize
 }
