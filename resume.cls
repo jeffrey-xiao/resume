@@ -53,10 +53,10 @@
         {\color{headerText} #1}{\color{headerEmph} #2}
       };
       \node [anchor=north, align=center] (contact) at (name.south) {
-        \color{bodyText}\bodyfont\selectfont #3
+        \color{bodyText}\large\headerfont\selectfont #3
       };
       \node [anchor=north, align=center] (links) at (contact.south) {
-        \color{bodyText}\bodyfont\selectfont #4
+        \color{bodyText}\large\headerfont\selectfont #4
       };
   \end{tikzpicture}
 }
@@ -145,7 +145,6 @@
 }
 
 \newcommand{\iconentry}[2] {
-  \bodyfont\selectfont
   \parbox[t]{0.25cm}{\centering#1} \ #2
 }
 
