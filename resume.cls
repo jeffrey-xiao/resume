@@ -22,6 +22,7 @@
 \definecolor{darkred}{HTML}{641E16}
 \definecolor{blackred}{HTML}{400C07}
 \definecolor{lightgray}{HTML}{5B7085}
+\definecolor{gray}{HTML}{33404B}
 \definecolor{darkgray}{HTML}{1B2228}
 \definecolor{white}{HTML}{EEEEEE}
 
@@ -30,7 +31,7 @@
 \colorlet{headerEmph}{pink}
 \colorlet{titleText}{blackred}
 \colorlet{subTitleText}{darkred}
-\colorlet{bodyText}{darkgray}
+\colorlet{bodyText}{gray}
 \colorlet{tagText}{darkgray}
 \colorlet{subTagText}{lightgray}
 \colorlet{accent}{lightred}
@@ -40,7 +41,7 @@
 \newcounter{index}
 
 % Fonts
-\newfontfamily\bodyfont[Ligatures=TeX]{Raleway}
+\newfontfamily\bodyfont[Ligatures=TeX]{Open Sans}
 \newfontfamily\headerfont[Ligatures=TeX]{Josefin Sans Light}
 
 % Header
