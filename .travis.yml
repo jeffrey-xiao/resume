@@ -4,7 +4,7 @@ install:
   - sudo apt-get install -y texlive-xetex
   - pip install --user awscli
 script:
-  - xetex resume.tex
+  - xelatex resume.tex
 deploy:
   provider: script
   script: aws s3 cp resume.pdf s3://jeffreyxiao-resume --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
