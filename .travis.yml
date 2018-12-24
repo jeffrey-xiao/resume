@@ -1,4 +1,5 @@
 addons:
   artifacts:
+    s3_region: "us-east-1"
     paths:
       - resume.pdf
