@@ -1,7 +1,7 @@
 language: generic
 sudo: required
 install:
-  - sudo apt-get install -y texlive-xetex
+  - sudo apt-get install -y texlive-xetex texlive-formats-extra
   - pip install --user awscli
 script:
   - xelatex resume.tex
