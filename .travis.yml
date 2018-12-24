@@ -1,0 +1,4 @@
+addons:
+  artifacts:
+    paths:
+      - resume.pdf
