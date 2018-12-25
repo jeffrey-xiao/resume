@@ -41,8 +41,8 @@
 \newcounter{index}
 
 % Fonts
-\newfontfamily\bodyfont[Ligatures=TeX]{Open Sans}
-\newfontfamily\headerfont[Ligatures=TeX]{Josefin Sans Light}
+\newfontfamily\bodyfont[Path=./fonts/, ItalicFont=*-Italic, Ligatures=TeX]{OpenSans}
+\newfontfamily\headerfont[Path=./fonts/, ItalicFont=*-Italic, Ligatures=TeX]{JosefinSans}
 
 % Header
 
