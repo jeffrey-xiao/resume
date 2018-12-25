@@ -41,8 +41,11 @@
 \newcounter{index}
 
 % Fonts
-\newfontfamily\bodyfont[Path=./fonts/, ItalicFont=*-Italic, Ligatures=TeX]{OpenSans}
-\newfontfamily\headerfont[Path=./fonts/, ItalicFont=*-Italic, Ligatures=TeX]{JosefinSans}
+\newfontfamily{\FAB}[Path=./fonts/, Scale=0.85]{font-awesome-5-brands}
+\newfontfamily{\FAR}[Path=./fonts/, Scale=0.85]{font-awesome-5-free-regular}
+\newfontfamily{\FAS}[Path=./fonts/, Scale=0.85]{font-awesome-5-free-solid}
+\newfontfamily\bodyfont[Path=./fonts/, ItalicFont=*-Italic, Ligatures=TeX]{open-sans}
+\newfontfamily\headerfont[Path=./fonts/, ItalicFont=*-Italic, Ligatures=TeX]{josefin-sans}
 
 % Header
 
