@@ -5,6 +5,7 @@ install:
   - pip install --user awscli
 script:
   - xelatex resume.tex
+  - xelatex resume.tex
 deploy:
   provider: script
   script: aws s3 cp resume.pdf s3://jeffreyxiao-resume --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
