@@ -9,8 +9,8 @@ find a compiled PDF version [here](https://s3.amazonaws.com/jeffreyxiao-resume/r
 
 ## Font Attribution
 
- - [Font Awesome 5 Free](https://fontawesome.com/license/free)
- - [Open Sans and Josefin Sans](https://fonts.google.com/attribution)
+- [Font Awesome 5 Free](https://fontawesome.com/license/free)
+- [Open Sans and Josefin Sans](https://fonts.google.com/attribution)
 
 ## License
 
