@@ -13,17 +13,17 @@
     {jeffrey}%
     {xiao}%
     {\iterate{1.647.919.3171, \href{mailto:jeffrey.xiao@uwaterloo.ca}{jeffrey.xiao@uwaterloo.ca}}}%
-    {\iterate{%
-      \iconentry{\FAS\symbol{"F015}}{\href{https://jeffreyxiao.me/}{jeffreyxiao.me}},%
-      \iconentry{\FAB\symbol{"F09B}}{\href{https://github.com/jeffrey-xiao/}{jeffrey-xiao}},%
-      \iconentry{\FAB\symbol{"F08C}}{\href{https://www.linkedin.com/in/jeffreyxiao}{jeffreyxiao}}%
-    }}%
+    {%
+      \iconentry{\FAS\symbol{"F015}}{\href{https://jeffreyxiao.me}{jeffreyxiao.me}}\ %
+      \iconentry{\FAB\symbol{"F09B}}{\href{https://github.com/jeffrey-xiao}{jeffrey-xiao}}\ %
+      \iconentry{\FAB\symbol{"F08C}}{\href{https://www.linkedin.com/in/jeffreyxiao}{jeffreyxiao}}\ %
+    }%
   \begin{sidebar}
     \section{SKILLS}
       \subheader{Languages}
-        \iterate{Rust, C++, Java, Scala, Elixir}
-        \iterate{Python, JavaScript, HTML}
-        \iterate{CSS, SQL, Bash}
+        \iterate{Rust, C++, Java, Scala, Go}
+        \iterate{Elixir, Python, JavaScript}
+        \iterate{HTML, CSS, SQL, Bash}
       \subheader{Technologies}
         \iterate{React, Node, Phoenix}
         \iterate{Git, Linux, AWS}
@@ -37,21 +37,14 @@
         \item[--] Silver, Canadian Computing Olympiad \separator\emph{2015}
         \item[--] Platinum Division, USA Computing Olympiad \separator\emph{2015}
       \end{itemize}%
-    \section{CERTIFICATIONS}
-      \begin{itemize}[leftmargin=0.45cm, noitemsep, topsep=0.0cm]%
-        \item[--] Certified Java SE 6 Programmer
-        \item[--] Algorithms I \& II, \emph{Princeton}
-        \item[--] Machine Learning, \emph{Stanford}
-        \item[--] R Programming, \emph{Microsoft \& JHU }
-      \end{itemize}%
     \section{EDUCATION}
       \subheader{University of Waterloo}
       \color{tagText}Bachelor of Software Engineering
       \color{subTagText}2016 -- 2021 \separator\color{subTagText}Waterloo, Canada
       \color{bodyText}%
       \begin{itemize}[leftmargin=0.45cm, noitemsep, topsep=0.0cm]%
-        \item[--] 93.24\% Cumulative Average
-        \item[--] Dean's Honour List (4 Terms)
+        \item[--] 93.93\% Cumulative Average
+        \item[--] Dean's Honour List (5 Terms)
         \item[--] ACM Team Member
       \end{itemize}%
     \section{INTERESTS}
@@ -63,9 +56,28 @@
       \end{itemize}%
   \end{sidebar}
   \begin{main}
-    \vspace{0.2cm}%
     \section{EXPERIENCE}
       \begin{entrylist}
+        \rightentry%
+          {May 2019 -- Aug 2019}%
+          {Cockroach Labs}%
+          {New York, New York}%
+          {Backend Engineering Intern}%
+          {\createlist%
+            {%
+              Integrated manual range splits with automatic range merges and implemented %
+              expiration of manual splits. %
+            }%
+            {%
+              Decreased range descriptor cache misses by over 50\% in frequent range split and %
+              relocate workloads by improving the eviction policy, using logical timestamps to %
+              determine staleness, and coalescing requests. %
+            }%
+            {%
+              Implemented a SSTable based snapshot strategy to decrease memory usage and speed up %
+              snapshot application. %
+            }%
+          }
         \rightentry%
           {Sept 2018 -- Dec 2018}%
           {Google}%
@@ -79,10 +91,6 @@
             {%
               Streamlined and extended pipeline for selecting and enhancing top performing %
               AdGroups, and increased total network revenue by 0.2\%. %
-            }%
-            {%
-              Developed dashboards to evaluate performance of models and discover insights for %
-              further improvements. %
             }%
           }
         \rightentry%
@@ -99,10 +107,6 @@
               Used timelabel tags to represent the state of underlying data, update materialized %
               views when dependencies get updated, and handle schedule and view definition %
               changes. %
-            }%
-            {%
-              Built critical APIs and migration scripts to launch a web application for monitoring %
-              materialized views and data pipeline performance. %
             }%
           }
         \rightentry%
@@ -157,24 +161,6 @@
             }%
             {%
               Used strict parallelism to efficiently send RPCs to probe nearby nodes. %
-            }%
-          }
-        \rightentry%
-          {Python, C++, Unity, TensorFlow}%
-          {inSight}%
-          {Greylock Hackfest}%
-          {\href{https://goo.gl/Qy4TcJ}{goo.gl/Qy4TcJ}}%
-          {\createlist%
-            {%
-              Built an AR headset that uses machine learning and custom image analysis algorithms %
-              to display information about the user's point of focus. %
-            }%
-            {%
-              Applied gaze tracking to enable full control of headset. %
-            }%
-            {%
-              Used Bing and IoT technology to control home appliances and learn about surroundings %
-              in an intuitive way. %
             }%
           }
       \end{entrylist}

@@ -157,7 +157,7 @@
    \tmp#1\stopreplace#2\stopreplace}
 \def\stopreplace#1\stopreplace{}
 
-\newcommand\separator{\color{accent}// \color{bodyText}}
+\newcommand\separator{\color{accent}• \color{bodyText}}
 \newcommand\iterate[1]{
   \replace{#1}{,}{\ \separator}
 }
