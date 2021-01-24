@@ -7,6 +7,7 @@ build:
   stage: build
   script:
     - xelatex resume.tex
+    - xelatex resume.tex
   artifacts:
     paths:
       - resume.pdf
