@@ -1,0 +1,20 @@
+stages:
+  - build
+  - deploy
+
+build:
+  image: blang/latex
+  stage: build
+  script:
+    - xelatex resume.tex
+  artifacts:
+    paths:
+      - resume.pdf
+
+deploy:
+  image: python:latest
+  stage: deploy
+  before_script:
+    - pip install awscli
+  script:
+    - aws s3 cp resume.pdf s3://jeffreyxiao-resume --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
